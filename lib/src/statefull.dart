@@ -1,17 +1,34 @@
 import 'package:demo/src/stateless.dart';
 import 'package:flutter/material.dart';
 
+//Vòng đời của 1 statefull widget bao gồm
+// + createState (khởi tạo state)
+// + initState (khỏi động state)
+// + didChangeDependencies 
+// + build (render ra giao diện)
+// + setState (thay đổi state)
+// + didUpdateWidget
+// + deactivate
+// + dispose
+
 class Statefull extends StatefulWidget {
   const Statefull({super.key});
 
   @override
   // ignore: library_private_types_in_public_api
-  _StatefullState createState() => _StatefullState();
+  _StatefullState createState() => _StatefullState(); //createState
 }
 
 class _StatefullState extends State<Statefull> {
   final TextEditingController _textEditingController = TextEditingController();
   String name = "Not input";
+  
+  //chạy initState
+
+
+  //chạy didChangeDependencies
+
+  
   @override
   Widget build(BuildContext context) {
     return SafeArea(
