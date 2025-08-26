@@ -1,8 +1,9 @@
 import 'package:demo/src/change%20lifecycle/a.dart';
 import 'package:demo/src/demo-audio/demo-audio.dart';
 import 'package:demo/src/demo-fonts/demo-font.dart';
+import 'package:demo/src/demo-video/demo-video.dart';
 import 'package:demo/src/demo_images/demo_images.dart';
-import 'package:demo/src/intl/intel.dart';
+import 'package:demo/src/demo-intl/intel.dart';
 import 'package:demo/src/manage_app_cycle/manage_app_cycle.dart';
 import 'package:demo/src/statefull.dart';
 import 'package:demo/src/variable_lifecycle_in_statefull/var.dart';
@@ -16,16 +17,15 @@ navigatePage(BuildContext context, Widget location) {
 }
 
 class DemoSwitch extends StatelessWidget {
-  const DemoSwitch({super.key});
+  final bool isDark;
+  final ValueChanged<bool> onChanged;
+  const DemoSwitch({super.key, required this.isDark, required this.onChanged});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          "Demo App",
-          style: TextStyle(color: Colors.white),
-        ),
+        title: const Text("Demo App", style: TextStyle(color: Colors.white)),
         backgroundColor: Colors.blue,
       ),
       body: Container(
@@ -70,7 +70,7 @@ class DemoSwitch extends StatelessWidget {
               },
               child: const Text("Demo about fonts"),
             ),
-             ElevatedButton(
+            ElevatedButton(
               onPressed: () {
                 navigatePage(context, DemoImages());
               },
@@ -82,8 +82,20 @@ class DemoSwitch extends StatelessWidget {
               },
               child: const Text("Demo Audio"),
             ),
+            ElevatedButton(
+              onPressed: () {
+                navigatePage(context, DemoVideo());
+              },
+              child: const Text("Demo about Video"),
+            ),
           ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          onChanged(!isDark);
+        },
+        child: Icon(isDark ? Icons.dark_mode : Icons.light),
       ),
     );
   }

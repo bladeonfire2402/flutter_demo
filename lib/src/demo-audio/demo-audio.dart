@@ -15,7 +15,7 @@ String formatTime(Duration duration) {
 }
 
 class DemoAudio extends StatefulWidget {
-  const DemoAudio({Key? key}) : super(key: key);
+  const DemoAudio({super.key});
 
   @override
   _DemoAudioState createState() => _DemoAudioState();
@@ -77,12 +77,15 @@ class _DemoAudioState extends State<DemoAudio> {
                 await audioPlayer.seek(newPosition);
               },
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(formatTime(position)), // thời gian đã chạy
-                Text(formatTime(duration - position)), // thời gian còn lại
-              ],
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(formatTime(position)), // thời gian đã chạy
+                  Text(formatTime(duration - position)), // thời gian còn lại
+                ],
+              ),
             ),
             IconButton(
               onPressed: () async {
