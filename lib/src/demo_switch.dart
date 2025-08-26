@@ -1,4 +1,5 @@
 import 'package:demo/src/change%20lifecycle/a.dart';
+import 'package:demo/src/demo-audio/demo-audio.dart';
 import 'package:demo/src/demo-fonts/demo-font.dart';
 import 'package:demo/src/demo_images/demo_images.dart';
 import 'package:demo/src/intl/intel.dart';
@@ -74,6 +75,12 @@ class DemoSwitch extends StatelessWidget {
                 navigatePage(context, DemoImages());
               },
               child: const Text("Demo about images"),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                navigatePage(context, DemoAudio());
+              },
+              child: const Text("Demo Audio"),
             ),
           ],
         ),
