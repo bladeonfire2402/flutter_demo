@@ -69,17 +69,20 @@ class _AppLifecycleDisplayState extends State<AppLifecycleDisplay> {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: SizedBox(
-        width: 300,
-        child: SingleChildScrollView(
-          controller: _scrollController,
-          child: Column(
-            children: <Widget>[
-              Text('Current State: ${_state ?? 'Not initialized yet'}'),
-              const SizedBox(height: 30),
-              Text('State History:\n  ${_states.join('\n  ')}'),
-            ],
+    return Scaffold(
+      appBar: AppBar(),
+      body: Center(
+        child: SizedBox(
+          width: 300,
+          child: SingleChildScrollView(
+            controller: _scrollController,
+            child: Column(
+              children: <Widget>[
+                Text('Current State: ${_state ?? 'Not initialized yet'}'),
+                const SizedBox(height: 30),
+                Text('State History:\n  ${_states.join('\n  ')}'),
+              ],
+            ),
           ),
         ),
       ),

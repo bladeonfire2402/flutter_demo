@@ -1,4 +1,6 @@
 import 'package:demo/src/change%20lifecycle/a.dart';
+import 'package:demo/src/demo-fonts/demo-font.dart';
+import 'package:demo/src/demo_images/demo_images.dart';
 import 'package:demo/src/intl/intel.dart';
 import 'package:demo/src/manage_app_cycle/manage_app_cycle.dart';
 import 'package:demo/src/statefull.dart';
@@ -60,6 +62,18 @@ class DemoSwitch extends StatelessWidget {
                 navigatePage(context, AppLifecycleListenerExample());
               },
               child: const Text("Demo about manage LifeCycle"),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                navigatePage(context, DemoFont());
+              },
+              child: const Text("Demo about fonts"),
+            ),
+             ElevatedButton(
+              onPressed: () {
+                navigatePage(context, DemoImages());
+              },
+              child: const Text("Demo about images"),
             ),
           ],
         ),
