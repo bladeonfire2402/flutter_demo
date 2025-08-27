@@ -14,6 +14,9 @@ class DemoImages extends StatelessWidget {
     //Uint8List imageBytes = base64Decode(base64string);
     
     return Scaffold(
+      appBar: AppBar(
+        title: Text("Demo images"),
+      ),
       body: SingleChildScrollView(
         child: Column(
           children: [

@@ -7,6 +7,9 @@ const DemoFont({ Key? key }) : super(key: key);
   @override
   Widget build(BuildContext context){
     return Scaffold(
+      appBar: AppBar(
+        title: Text("Demo fonts"),
+      ),
       body: Center(
         child: Column(
           children:[

@@ -47,7 +47,9 @@ class _DemoVideoState extends State<DemoVideo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: Text("Demo video"),
+      ),
       body: Center(
         child:
             _videoPlayerController.value.isInitialized
